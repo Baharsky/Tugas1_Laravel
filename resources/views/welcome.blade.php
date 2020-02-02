@@ -31,7 +31,7 @@
                                     <li class="active"><a href="#">Beranda</a></li>
                                     <li><a href="#rekomendasi">Rekomendasi</a></li>
                                     <li><a href="#review">Review</a></li>
-                                    <li><a href="#tips">Tabel</a></li>
+                                    <li><a href="#tips">table</a></li>
                                     <li><a href="#testimoni">Testimoni</a></li>
                                     <li><a href="#">Tentang</a></li>
                                 </ul>
