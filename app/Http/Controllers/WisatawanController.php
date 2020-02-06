@@ -16,4 +16,10 @@ class WisatawanController extends Controller
     	//mengirim data ke view index
     	return view('welcome', compact('wisatawan', 'fillwisatawan'));
     }
+
+    public function create(){
+
+    	$wisatawan = 'wisatawan';
+    	return view('create', compact('wisatawan'));
+    }
 }

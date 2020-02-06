@@ -11,9 +11,13 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/stisla', function () {
+     return view('index');
+ });
 
 //route CRUD
 Route::get('/','WisatawanController@index');
+
+Route::get('input', function(){
+	return view('create');
+});
