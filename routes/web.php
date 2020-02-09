@@ -18,6 +18,12 @@
 //route CRUD
 Route::get('/','WisatawanController@index');
 
-Route::get('input', function(){
-	return view('create');
-});
+Route::post('/create','WisatawanController@create');
+
+Route::post('/wisatawan','WisatawanController@store');
+
+//delete
+Route::get('/delete/{id}','WisatawanController@delete');
+//update
+Route::get('/update/{id}','WisatawanController@update');
+Route::post('/updateStore/{id}','WisatawanController@updateStore');

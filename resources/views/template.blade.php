@@ -339,23 +339,7 @@
 @yield('main')
 
 
-                <!-- News Sidebar -->
-                <div class="col-xl-4">
-                    <div class="travello">
-                        <div class="background_image" style="background-image:url(images/sidebar.jpg)"></div>
-                        <div class="travello_content">
-                            <div class="travello_content_inner">
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="travello_container">
-                            <div class="d-flex flex-column align-items-center justify-content-end">
-                                <span class="travello_title" style="border: 3px solid black; padding: 3%; margin-top: 117%;">Libur Tenang, Hatipun Senang</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

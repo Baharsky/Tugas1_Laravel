@@ -4,7 +4,7 @@
                     <div class="news_container">
                     
                         <!-- News Post -->
-                        <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+                        <div class="news_post d-flex flex-md-row ">
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>Data Wisatawan</div>
@@ -15,21 +15,28 @@
                                     <table class="table">
                                        <thead>
                                            <tr>
-                                               <th>No</th>
-                                               <th>Nama</th>
-                                               <th>Gender</th>
-                                               <th>Umur</th>
-                                               <th>Asal</th>
+                                               <th width="50px">No</th>
+                                               <th width="90px">Nama</th>
+                                               <th width="180px">Gender</th>
+                                               <th width="130px">Umur</th>
+                                               <th width="250px">Asal</th>
+                                               <th width="100px">Foto</th>
+                                               <th width="170px">Action</th>
                                            </tr>
                                        </thead>
                                        <tbody>
                                            @foreach($fillwisatawan as $wisatawan)
                                            <tr>
-                                               <td>{{ $wisatawan->no_wisatawan }}</td>
-                                               <td>{{ $wisatawan->nama_wisatawan }}</td>
-                                               <td>{{ $wisatawan->gender_wisatawan }}</td>
-                                               <td>{{ $wisatawan->umur_wisatawan }}</td>
-                                               <td>{{ $wisatawan->asal_wisatawan }}</td>
+                                               <td>{{ $wisatawan->id }}</td>
+                                               <td>{{ $wisatawan->nama }}</td>
+                                               <td>{{ $wisatawan->gender }}</td>
+                                               <td>{{ $wisatawan->umur }}</td>
+                                               <td>{{ $wisatawan->asal }}</td>
+                                               <td>{{ $wisatawan->foto }}</td>
+                                               <td>
+                                                   <a href="{{ url('/update/'. $wisatawan->id) }}" class="btn btn-primary">Update</a>
+                                                   <a href="{{ url('/delete/'. $wisatawan->id) }}" class="btn btn-danger">Delete</a>
+                                               </td>
                                            </tr>
                                            @endforeach
                                        </tbody> 
@@ -41,7 +48,7 @@
                             </div>
 
                         </div>
-                         <a href="{{ url('Wisatawan/create')}} classs="btn btn-primary>Tambah Data</a>
+                         <a href="{{ url('create') }}" class="btn btn-primary">Tambah Data</a>
                     </div>
                 </div>
 @stop
