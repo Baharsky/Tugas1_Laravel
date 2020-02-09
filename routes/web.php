@@ -18,7 +18,7 @@
 //route CRUD
 Route::get('/','WisatawanController@index');
 
-Route::post('/create','WisatawanController@create');
+Route::get('/create','WisatawanController@create');
 
 Route::post('/wisatawan','WisatawanController@store');
 

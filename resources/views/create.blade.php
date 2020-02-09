@@ -39,9 +39,8 @@
 							</div>
 							<div class="form-group">
 								<label>Foto</label><br>
-								<input type="text" name="foto" class="form-control" id="foto" placeholder="Foto" required>
-								<!-- <input type="file" name="foto" id="foto" accept=".jpg, .png"> -->
-							</div>
+								<input type="file" name="foto" id="foto" accept=".jpg, .png" >
+							</div><br>
 							<button type="submit" id="button1" class="btn btn-primary">Submit</button>
 							</div>
 						</form>

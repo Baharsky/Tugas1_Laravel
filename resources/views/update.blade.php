@@ -44,8 +44,10 @@
 							<input type="text" name="asal" id="asal" class="form-control" value="{{$datas->asal}}" required>
 						</div>
 						<div class="form-group">
-							<label>Foto</label>
-							<input type="text" name="foto" id="foto" class="form-control" value="{{$datas->foto}}" required>
+							<label>Foto</label><br>
+							<img src="{{ url('img/'.$datas->foto)}}" width="200px">
+							<input type="file" name="foto" id="foto" accept=".jpg, .png, .jpeg">
+
 						</div>
 						<button type="submit" id="button1" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Submit</button>
 						</div>

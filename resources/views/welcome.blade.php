@@ -32,7 +32,9 @@
                                                <td>{{ $wisatawan->gender }}</td>
                                                <td>{{ $wisatawan->umur }}</td>
                                                <td>{{ $wisatawan->asal }}</td>
-                                               <td>{{ $wisatawan->foto }}</td>
+                                               <td>
+                                                    <img src="{{ url('img/'.$wisatawan->foto) }}" style="object-fit: cover; width: 70px;height: 70px;">
+                                                </td>
                                                <td>
                                                    <a href="{{ url('/update/'. $wisatawan->id) }}" class="btn btn-primary">Update</a>
                                                    <a href="{{ url('/delete/'. $wisatawan->id) }}" class="btn btn-danger">Delete</a>
