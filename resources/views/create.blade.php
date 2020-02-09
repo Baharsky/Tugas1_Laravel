@@ -39,7 +39,7 @@
 							</div>
 							<div class="form-group">
 								<label>Foto</label><br>
-								<input type="file" name="foto" id="foto" accept=".jpg, .png" >
+								<input type="file" name="foto" id="foto" accept=".jpeg, .jpg, .png" >
 							</div><br>
 							<button type="submit" id="button1" class="btn btn-primary">Submit</button>
 							</div>
