@@ -7,17 +7,23 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\wisatawan;
+use Illuminate\Support\Facades\DB;
 
 class WisatawanController extends Controller
 {
     public function index(){
 
     	//ngambil data dari tabel
-    	$wisatawan = 'wisatawan';
-    	$fillwisatawan = Wisatawan::all();
+    	// $wisatawan = 'wisatawan';
+    	// $fillwisatawan = Wisatawan::all();
+    	// $wisatawan = DB::table('wisatawan')->paginate(3);
 
-    	//mengirim data ke view index
-    	return view('welcome', compact('wisatawan', 'fillwisatawan'));
+    	// //mengirim data ke view index
+    	// return view('welcome', compact('wisatawan', 'fillwisatawan'));
+
+    	$wisatawan=Wisatawan::all();
+        $wisatawan=Wisatawan::paginate(2);
+        return view('welcome', ['fillwisatawan' => $wisatawan]);
     }
 
     public function create(){
@@ -97,9 +103,32 @@ class WisatawanController extends Controller
 	    	$update->update();
     	}
 
-
-    	
-
     	return redirect('/');
     }
+
+	public function search(Request $request){
+	    $cari = $request->cari;
+ 
+            // mengambil data dari table pegawai sesuai pencarian data
+        $wisatawan = DB::table('wisatawan')
+        ->where('nama','like',"%".$cari."%")
+        ->orWhere('gender', 'like', "%".$cari."%")
+        ->paginate();
+ 
+            // mengirim data pegawai ke view index
+        return view('welcome',['fillwisatawan' => $wisatawan]);
+	   }
+	
+ 
+ // 	public function paginate()
+	// {
+	// 	$wisatawan = wisatawan::all();
+ //    	        // mengambil data dari table pegawai
+	// 	$wisatawan = DB::table('wisatawan')->paginate(5);
+ 
+ //    	        // mengirim data pegawai ke view index
+	// 	return view('/welcome',['wisatawan' => $pegawai]);
+ 
+	// }
+
 }

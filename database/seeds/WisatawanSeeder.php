@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+
+class WisatawanSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+    	$faker = Faker::create('id_ID');
+
+    	for ($i = 1; $i <= 50; $i++) { 
+ 
+    	
+
+        DB::table('wisatawan')->insert([
+        	'nama' => $faker->name,
+			'gender' => $faker->,
+			'umur' => $faker->numberBetween(18,40),
+			'asal' => $faker->address,
+			'foto' => $faker->imageUrl      	
+        ]);
+    	}
+    }
+}

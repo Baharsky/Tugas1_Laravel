@@ -10,6 +10,10 @@
                                     <div>Data Wisatawan</div>
                                     <div></div>
                                 </div><br>
+                                <form action="{{ url('search') }}" method="get">
+                                    <input type="cari" name="cari" placeholder="Search" aria-label="Search">
+                                    <input type="submit" value="search">
+                                    </form>
                                 <div class="news_post_text">
                                     @if (!empty($fillwisatawan))
                                     <table class="table">
@@ -43,14 +47,21 @@
                                            @endforeach
                                        </tbody> 
                                     </table>
+
+                              <br/>
+                             {{ $fillwisatawan->links() }}
+
                                     @else
                                     <p>Tidak ada data Wisatawan</p>
                                     @endif
+
                                 </div>
                             </div>
 
                         </div>
                          <a href="{{ url('create') }}" class="btn btn-primary">Tambah Data</a>
                     </div>
+                    <br/>
+                    
                 </div>
 @stop

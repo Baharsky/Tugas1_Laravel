@@ -27,3 +27,6 @@ Route::get('/delete/{id}','WisatawanController@delete');
 //update
 Route::get('/update/{id}','WisatawanController@update');
 Route::post('/updateStore/{id}','WisatawanController@updateStore');
+
+Route::get('/search','WisatawanController@search');
+
