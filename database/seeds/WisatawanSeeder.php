@@ -13,19 +13,19 @@ class WisatawanSeeder extends Seeder
     public function run()
     {
 
-    	$faker = Faker::create('id_ID');
+    	$wisatawan = factory(\App\User::class, 10)->create();
 
-    	for ($i = 1; $i <= 50; $i++) { 
+   //  	for ($i = 1; $i <= 50; $i++) { 
  
     	
 
-        DB::table('wisatawan')->insert([
-        	'nama' => $faker->name,
-			'gender' => $faker->,
-			'umur' => $faker->numberBetween(18,40),
-			'asal' => $faker->address,
-			'foto' => $faker->imageUrl      	
-        ]);
-    	}
+   //      DB::table('wisatawan')->insert([
+   //      	'nama' => $faker->name,
+			// 'gender' => $faker->teks,
+			// 'umur' => $faker->numberBetween(18,40),
+			// 'asal' => $faker->address,
+			// 'foto' => $faker->imageUrl      	
+   //      ]);
+   //  	}
     }
 }
