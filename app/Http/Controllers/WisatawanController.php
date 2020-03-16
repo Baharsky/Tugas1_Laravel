@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\File;
 use App\wisatawan;
 use Illuminate\Support\Facades\DB;
 
+use App\Exports\WisatawanExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
+
 class WisatawanController extends Controller
 {
     public function index(){
@@ -54,14 +58,14 @@ class WisatawanController extends Controller
     		'asal' => $request->asal,
     		'foto' => $insert['foto'] = "$imagewisatawan"
     	]);
-    	return redirect('/');
+    	return redirect('/home');
     }
 
     public function delete($id){
     	$delete = Wisatawan::find($id);
     	$delete->delete();
 
-    	return redirect('/');
+    	return redirect('/home');
     }
 
     public function update($id){
@@ -103,7 +107,7 @@ class WisatawanController extends Controller
 	    	$update->update();
     	}
 
-    	return redirect('/');
+    	return redirect('/home');
     }
 
 	public function search(Request $request){
@@ -118,7 +122,11 @@ class WisatawanController extends Controller
             // mengirim data pegawai ke view index
         return view('welcome',['fillwisatawan' => $wisatawan]);
 	   }
-	
+
+	public function export_excel()
+    {
+        return Excel::download(new WisatawanExport, 'wisatawan.xlsx');
+    }
  
  // 	public function paginate()
 	// {
