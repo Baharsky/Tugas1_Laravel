@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Wisatawan;
 use Faker\Factory as Faker;
+
 
 class WisatawanSeeder extends Seeder
 {
@@ -13,7 +15,7 @@ class WisatawanSeeder extends Seeder
     public function run()
     {
 
-    	$wisatawan = factory(\App\User::class, 10)->create();
+    	Factory(App\Wisatawan::class,10)->create();
 
    //  	for ($i = 1; $i <= 50; $i++) { 
  
